@@ -35,7 +35,7 @@ st.markdown("""
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 20px 48px;
+        padding: 28px 96px;
         border-bottom: 1px solid #1f1f1f;
         background: #0a0a0a;
         position: sticky;
@@ -71,7 +71,7 @@ st.markdown("""
 
     /* HERO */
     .hero {
-        padding: 100px 48px 60px;
+        padding: 140px 96px 100px;
         border-bottom: 1px solid #1f1f1f;
     }
     .hero-label {
@@ -102,7 +102,7 @@ st.markdown("""
     /* AUTH */
     .auth-wrap {
         max-width: 400px;
-        margin: 0 48px 60px;
+        margin: 0 96px 80px;
         padding: 32px;
         border: 1px solid #1f1f1f;
         border-radius: 16px;
@@ -121,7 +121,7 @@ st.markdown("""
     }
 
     /* MAIN */
-    .main-wrap { padding: 48px; }
+    .main-wrap { padding: 72px 96px; }
 
     .section-label {
         font-size: 11px;
@@ -185,7 +185,7 @@ st.markdown("""
         font-size: 12px;
         color: #333;
         line-height: 1.6;
-        padding: 20px 48px;
+        padding: 28px 96px;
         border-top: 1px solid #1a1a1a;
     }
 
@@ -364,7 +364,7 @@ else:
     col_a, col_b = st.columns([6, 1])
     with col_a:
         st.markdown(f"""
-        <div style="padding: 16px 48px 0; font-size:13px; color:#444;">
+        <div style="padding: 16px 96px 0; font-size:13px; color:#444;">
             Signed in as <strong style="color:#ffffff">{st.session_state.user}</strong>
         </div>""", unsafe_allow_html=True)
     with col_b:
