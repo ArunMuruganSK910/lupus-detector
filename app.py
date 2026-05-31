@@ -18,7 +18,10 @@ st.markdown("""
 
     * { font-family: 'Inter', sans-serif; }
 
-    .stApp { background: #ffffff; }
+    .stApp {
+        background: #0a0a0a !important;
+        color: #ffffff;
+    }
 
     #MainMenu, footer, header { visibility: hidden; }
 
@@ -33,183 +36,215 @@ st.markdown("""
         align-items: center;
         justify-content: space-between;
         padding: 20px 48px;
-        border-bottom: 1px solid #f0f0f0;
-        background: #fff;
+        border-bottom: 1px solid #1f1f1f;
+        background: #0a0a0a;
+        position: sticky;
+        top: 0;
+        z-index: 100;
     }
     .nav-brand {
-        font-size: 18px;
-        font-weight: 700;
-        color: #0f0f0f;
-        letter-spacing: -0.3px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #ffffff;
+        letter-spacing: -0.2px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .nav-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #ef4444;
+        display: inline-block;
     }
     .nav-tag {
-        font-size: 12px;
+        font-size: 11px;
         font-weight: 500;
-        color: #6b7280;
-        background: #f3f4f6;
+        color: #555;
+        background: #141414;
+        border: 1px solid #1f1f1f;
         padding: 4px 12px;
         border-radius: 100px;
+        letter-spacing: 0.05em;
     }
 
     /* HERO */
     .hero {
-        padding: 80px 48px 60px;
-        max-width: 700px;
+        padding: 100px 48px 60px;
+        border-bottom: 1px solid #1f1f1f;
     }
     .hero-label {
-        font-size: 12px;
+        font-size: 11px;
         font-weight: 600;
-        letter-spacing: 0.12em;
+        letter-spacing: 0.15em;
         text-transform: uppercase;
-        color: #6b7280;
-        margin-bottom: 16px;
+        color: #ef4444;
+        margin-bottom: 20px;
     }
     .hero-title {
-        font-size: 48px;
+        font-size: 64px;
         font-weight: 700;
-        color: #0f0f0f;
-        line-height: 1.1;
-        letter-spacing: -1.5px;
-        margin-bottom: 16px;
+        color: #ffffff;
+        line-height: 1.0;
+        letter-spacing: -2px;
+        margin-bottom: 20px;
+        max-width: 700px;
     }
+    .hero-title span { color: #ef4444; }
     .hero-sub {
         font-size: 16px;
-        color: #6b7280;
+        color: #555;
         line-height: 1.6;
-        font-weight: 400;
+        max-width: 500px;
     }
 
     /* AUTH */
     .auth-wrap {
-        max-width: 420px;
-        margin: 0 48px;
-        padding: 40px;
-        border: 1px solid #e5e7eb;
+        max-width: 400px;
+        margin: 0 48px 60px;
+        padding: 32px;
+        border: 1px solid #1f1f1f;
         border-radius: 16px;
-        background: #fafafa;
+        background: #111111;
     }
     .auth-title {
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 600;
-        color: #0f0f0f;
-        margin-bottom: 8px;
+        color: #ffffff;
+        margin-bottom: 6px;
     }
     .auth-sub {
-        font-size: 14px;
-        color: #6b7280;
+        font-size: 13px;
+        color: #555;
         margin-bottom: 24px;
     }
 
     /* MAIN */
-    .main-wrap {
-        padding: 48px;
-    }
-    .section-title {
-        font-size: 13px;
+    .main-wrap { padding: 48px; }
+
+    .section-label {
+        font-size: 11px;
         font-weight: 600;
-        letter-spacing: 0.08em;
+        letter-spacing: 0.12em;
         text-transform: uppercase;
-        color: #9ca3af;
+        color: #444;
         margin-bottom: 16px;
     }
-    .upload-box {
-        border: 1.5px dashed #e5e7eb;
-        border-radius: 12px;
-        padding: 40px;
-        text-align: center;
-        background: #fafafa;
-        margin-bottom: 24px;
+
+    .card {
+        background: #111111;
+        border: 1px solid #1f1f1f;
+        border-radius: 16px;
+        padding: 24px;
     }
+
+    .upload-empty {
+        border: 1.5px dashed #222;
+        border-radius: 12px;
+        padding: 48px 24px;
+        text-align: center;
+        background: #0d0d0d;
+    }
+    .upload-empty-icon { font-size: 36px; margin-bottom: 12px; color: #333; }
+    .upload-empty-title { font-size: 14px; font-weight: 500; color: #444; margin-bottom: 4px; }
+    .upload-empty-sub { font-size: 12px; color: #333; }
+
     .result-positive {
-        background: #fff5f5;
-        border: 1px solid #fecaca;
+        background: #1a0808;
+        border: 1px solid #3d1010;
         border-left: 3px solid #ef4444;
         border-radius: 12px;
-        padding: 24px;
+        padding: 20px;
         margin-bottom: 20px;
     }
     .result-negative {
-        background: #f0fdf4;
-        border: 1px solid #bbf7d0;
+        background: #081a0e;
+        border: 1px solid #103d1a;
         border-left: 3px solid #22c55e;
         border-radius: 12px;
-        padding: 24px;
+        padding: 20px;
         margin-bottom: 20px;
     }
-    .result-label {
-        font-size: 18px;
-        font-weight: 700;
-        color: #0f0f0f;
-        margin-bottom: 6px;
-    }
-    .result-conf {
-        font-size: 14px;
-        font-weight: 500;
-        color: #4b5563;
-        margin-bottom: 10px;
-    }
-    .result-note {
-        font-size: 13px;
-        color: #6b7280;
-        line-height: 1.5;
-    }
-    .divider {
-        border: none;
-        border-top: 1px solid #f0f0f0;
-        margin: 40px 0;
-    }
+    .result-label { font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 6px; }
+    .result-conf { font-size: 13px; color: #888; margin-bottom: 8px; }
+    .result-note { font-size: 13px; color: #666; line-height: 1.5; }
+
+    .bar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+    .bar-name { font-size: 13px; color: #666; width: 90px; flex-shrink: 0; }
+    .bar-track { flex: 1; height: 4px; background: #1a1a1a; border-radius: 100px; overflow: hidden; }
+    .bar-fill-red { height: 100%; background: #ef4444; border-radius: 100px; }
+    .bar-fill-gray { height: 100%; background: #333; border-radius: 100px; }
+    .bar-pct { font-size: 13px; font-weight: 600; color: #ffffff; width: 45px; text-align: right; }
+
+    .detail-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #1a1a1a; }
+    .detail-key { font-size: 13px; color: #555; }
+    .detail-val { font-size: 13px; font-weight: 500; color: #ffffff; }
+
     .disclaimer {
         font-size: 12px;
-        color: #9ca3af;
+        color: #333;
         line-height: 1.6;
-        padding: 24px 48px;
-        border-top: 1px solid #f0f0f0;
+        padding: 20px 48px;
+        border-top: 1px solid #1a1a1a;
     }
 
-    /* Streamlit overrides */
+    /* Streamlit overrides for dark */
     .stButton > button {
-        background: #0f0f0f !important;
-        color: #fff !important;
+        background: #ffffff !important;
+        color: #0a0a0a !important;
         border: none !important;
         border-radius: 8px !important;
         padding: 10px 24px !important;
-        font-weight: 500 !important;
+        font-weight: 600 !important;
         font-size: 14px !important;
         width: 100% !important;
+        transition: opacity 0.2s !important;
     }
-    .stButton > button:hover {
-        background: #374151 !important;
-    }
+    .stButton > button:hover { opacity: 0.85 !important; }
+
     .stTextInput > div > div > input {
-        border: 1px solid #e5e7eb !important;
+        background: #0d0d0d !important;
+        border: 1px solid #1f1f1f !important;
         border-radius: 8px !important;
+        color: #ffffff !important;
         font-size: 14px !important;
         padding: 10px 14px !important;
     }
-    .stTabs [data-baseweb="tab-list"] {
-        gap: 0;
-        border-bottom: 1px solid #e5e7eb;
-        background: transparent;
+    .stTextInput > div > div > input::placeholder { color: #444 !important; }
+    .stTextInput > div > div > input:focus { border-color: #ef4444 !important; }
+
+    .stFileUploader {
+        background: #0d0d0d !important;
+        border: 1.5px dashed #222 !important;
+        border-radius: 12px !important;
     }
-    .stTabs [data-baseweb="tab-panel"] {
-        padding: 0 !important;
+
+    label { color: #666 !important; font-size: 13px !important; }
+
+    .stTabs [data-baseweb="tab-list"] {
+        background: transparent !important;
+        border-bottom: 1px solid #1f1f1f !important;
+        gap: 0;
     }
     .stTabs [data-baseweb="tab"] {
-        font-size: 14px;
-        font-weight: 500;
-        color: #6b7280;
-        padding: 10px 20px;
-        border-bottom: 2px solid transparent;
+        color: #444 !important;
+        font-size: 14px !important;
+        font-weight: 500 !important;
+        padding: 10px 20px !important;
     }
     .stTabs [aria-selected="true"] {
-        color: #0f0f0f !important;
-        border-bottom: 2px solid #0f0f0f !important;
+        color: #ffffff !important;
+        border-bottom: 2px solid #ef4444 !important;
     }
+    .stTabs [data-baseweb="tab-panel"] { padding: 0 !important; }
+
+    .stSpinner > div { border-top-color: #ef4444 !important; }
+
+    div[data-testid="stImage"] img { border-radius: 12px; }
 </style>
 """, unsafe_allow_html=True)
 
-
-# ── helpers ──────────────────────────────────────────────────────────────────
 
 def hash_pw(pw):
     import hashlib
@@ -253,40 +288,17 @@ def predict(model, image):
         st.error(f"Prediction error: {e}")
     return "Unknown", 0.5, np.array([0.5, 0.5]), ["LUPUS", "Non-LUPUS"]
 
-def confidence_chart(probs, names):
-    colors = ["#ef4444" if i == np.argmax(probs) else "#e5e7eb" for i in range(len(probs))]
-    fig = go.Figure(go.Bar(
-        x=names, y=probs * 100,
-        marker_color=colors,
-        text=[f"{p:.1f}%" for p in probs * 100],
-        textposition="auto",
-    ))
-    fig.update_layout(
-        yaxis_range=[0, 100],
-        yaxis_title="Confidence (%)",
-        xaxis_title="",
-        template="plotly_white",
-        height=280,
-        margin=dict(l=0, r=0, t=0, b=0),
-        plot_bgcolor="rgba(0,0,0,0)",
-        paper_bgcolor="rgba(0,0,0,0)",
-        font=dict(family="Inter", color="#4b5563", size=13),
-        showlegend=False,
-    )
-    return fig
 
-
-# ── nav ──────────────────────────────────────────────────────────────────────
-
+# NAV
 st.markdown("""
 <div class="nav">
-    <span class="nav-brand">🔬 Lupus Detector</span>
-    <span class="nav-tag">AI Medical Screening</span>
+    <div class="nav-brand">
+        <span class="nav-dot"></span>
+        Lupus Detector
+    </div>
+    <span class="nav-tag">AI · Medical Screening</span>
 </div>
 """, unsafe_allow_html=True)
-
-
-# ── session state ─────────────────────────────────────────────────────────────
 
 if "auth" not in st.session_state:
     st.session_state.auth = False
@@ -294,14 +306,13 @@ if "user" not in st.session_state:
     st.session_state.user = None
 
 
-# ── auth page ─────────────────────────────────────────────────────────────────
-
+# AUTH PAGE
 if not st.session_state.auth:
     st.markdown("""
     <div class="hero">
         <div class="hero-label">Deep Learning · Medical Imaging</div>
-        <div class="hero-title">Lupus skin detection, powered by AI.</div>
-        <div class="hero-sub">Upload a dermoscopic image. Our YOLO model classifies it as Lupus or Non-Lupus in seconds.</div>
+        <div class="hero-title">Detect <span>Lupus</span><br>from skin images.</div>
+        <div class="hero-sub">Upload a dermoscopic image. Our YOLO model detects Lupus in seconds with high confidence.</div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -311,7 +322,7 @@ if not st.session_state.auth:
         tab1, tab2 = st.tabs(["Sign in", "Create account"])
 
         with tab1:
-            st.markdown('<div style="height:16px"></div>', unsafe_allow_html=True)
+            st.markdown('<div style="height:20px"></div>', unsafe_allow_html=True)
             with st.form("login"):
                 u = st.text_input("Username", placeholder="your username")
                 p = st.text_input("Password", type="password", placeholder="••••••••")
@@ -325,7 +336,7 @@ if not st.session_state.auth:
                         st.error(msg)
 
         with tab2:
-            st.markdown('<div style="height:16px"></div>', unsafe_allow_html=True)
+            st.markdown('<div style="height:20px"></div>', unsafe_allow_html=True)
             with st.form("register"):
                 u2 = st.text_input("Username", placeholder="choose a username")
                 e2 = st.text_input("Email", placeholder="you@example.com")
@@ -348,18 +359,16 @@ if not st.session_state.auth:
         st.markdown('</div>', unsafe_allow_html=True)
 
 
-# ── main app ──────────────────────────────────────────────────────────────────
-
+# MAIN APP
 else:
-    # top bar with logout
     col_a, col_b = st.columns([6, 1])
     with col_a:
         st.markdown(f"""
-        <div style="padding: 16px 48px 0; font-size:14px; color:#6b7280;">
-            Signed in as <strong style="color:#0f0f0f">{st.session_state.user}</strong>
+        <div style="padding: 16px 48px 0; font-size:13px; color:#444;">
+            Signed in as <strong style="color:#ffffff">{st.session_state.user}</strong>
         </div>""", unsafe_allow_html=True)
     with col_b:
-        st.markdown('<div style="padding-top:12px">', unsafe_allow_html=True)
+        st.markdown('<div style="padding-top:10px">', unsafe_allow_html=True)
         if st.button("Sign out"):
             st.session_state.auth = False
             st.session_state.user = None
@@ -371,7 +380,7 @@ else:
     col1, col2 = st.columns([1, 1], gap="large")
 
     with col1:
-        st.markdown('<div class="section-title">Upload image</div>', unsafe_allow_html=True)
+        st.markdown('<div class="section-label">Upload image</div>', unsafe_allow_html=True)
         uploaded = st.file_uploader(
             "",
             type=["png", "jpg", "jpeg", "bmp", "tiff"],
@@ -381,19 +390,19 @@ else:
             image = Image.open(uploaded)
             st.image(image, use_column_width=True)
             st.markdown(f"""
-            <div style="margin-top:12px; font-size:13px; color:#9ca3af;">
-                {uploaded.name} · {image.size[0]}×{image.size[1]}px
+            <div style="margin-top:10px; font-size:12px; color:#444;">
+                {uploaded.name} &nbsp;·&nbsp; {image.size[0]}×{image.size[1]}px
             </div>""", unsafe_allow_html=True)
         else:
             st.markdown("""
-            <div class="upload-box">
-                <div style="font-size:32px; margin-bottom:12px">🖼</div>
-                <div style="font-size:14px; font-weight:500; color:#4b5563">Drop an image here</div>
-                <div style="font-size:12px; color:#9ca3af; margin-top:4px">PNG, JPG, JPEG, BMP, TIFF</div>
+            <div class="upload-empty">
+                <div class="upload-empty-icon">🔬</div>
+                <div class="upload-empty-title">Drop a skin image here</div>
+                <div class="upload-empty-sub">PNG · JPG · JPEG · BMP · TIFF</div>
             </div>""", unsafe_allow_html=True)
 
     with col2:
-        st.markdown('<div class="section-title">Analysis</div>', unsafe_allow_html=True)
+        st.markdown('<div class="section-label">Analysis</div>', unsafe_allow_html=True)
 
         if uploaded:
             with st.spinner("Analyzing..."):
@@ -405,28 +414,37 @@ else:
                 <div class="result-positive">
                     <div class="result-label">⚠️ Lupus Detected</div>
                     <div class="result-conf">Confidence: {conf*100:.1f}%</div>
-                    <div class="result-note">Please consult a dermatologist or rheumatologist for a proper diagnosis.</div>
+                    <div class="result-note">Please consult a dermatologist or rheumatologist for a proper clinical diagnosis.</div>
                 </div>""", unsafe_allow_html=True)
             else:
                 st.markdown(f"""
                 <div class="result-negative">
                     <div class="result-label">✅ No Lupus Detected</div>
                     <div class="result-conf">Confidence: {conf*100:.1f}%</div>
-                    <div class="result-note">No lupus indicators found. Routine checkups are still recommended.</div>
+                    <div class="result-note">No lupus indicators found. Routine medical checkups are still recommended.</div>
                 </div>""", unsafe_allow_html=True)
 
-            st.markdown('<div class="section-title" style="margin-top:24px">Confidence breakdown</div>', unsafe_allow_html=True)
-            st.plotly_chart(confidence_chart(probs, names), use_container_width=True)
+            st.markdown('<div class="section-label" style="margin-top:20px">Confidence</div>', unsafe_allow_html=True)
+            for name, prob in zip(names, probs):
+                fill_class = "bar-fill-red" if name == label else "bar-fill-gray"
+                st.markdown(f"""
+                <div class="bar-row">
+                    <span class="bar-name">{name}</span>
+                    <div class="bar-track"><div class="{fill_class}" style="width:{prob*100:.1f}%"></div></div>
+                    <span class="bar-pct">{prob*100:.1f}%</span>
+                </div>""", unsafe_allow_html=True)
 
-            with st.expander("Detailed results"):
-                for name, prob in zip(names, probs):
-                    st.write(f"**{name}:** {prob*100:.2f}%")
-                st.write(f"**Predicted:** {label}")
-                st.write(f"**Confidence:** {conf*100:.2f}%")
-                st.write(f"**Analyzed at:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+            st.markdown(f"""
+            <div style="margin-top:24px">
+                <div class="section-label">Details</div>
+                <div class="detail-row"><span class="detail-key">Predicted class</span><span class="detail-val">{label}</span></div>
+                <div class="detail-row"><span class="detail-key">Model</span><span class="detail-val">YOLOv8 classifier</span></div>
+                <div class="detail-row"><span class="detail-key">Analyzed at</span><span class="detail-val">{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}</span></div>
+            </div>""", unsafe_allow_html=True)
+
         else:
             st.markdown("""
-            <div style="padding: 60px 0; text-align:center; color:#9ca3af;">
+            <div style="padding:80px 0; text-align:center; color:#333;">
                 <div style="font-size:40px; margin-bottom:12px">🔬</div>
                 <div style="font-size:14px">Upload an image to begin analysis</div>
             </div>""", unsafe_allow_html=True)
@@ -435,6 +453,6 @@ else:
 
     st.markdown("""
     <div class="disclaimer">
-        <strong>Medical Disclaimer:</strong> This tool is for educational and screening purposes only.
-        It is not a substitute for professional medical diagnosis. Always consult a qualified healthcare provider.
+        Medical disclaimer: This tool is for educational and screening purposes only.
+        Not a substitute for professional medical diagnosis. Always consult a qualified healthcare provider.
     </div>""", unsafe_allow_html=True)
