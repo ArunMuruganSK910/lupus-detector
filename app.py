@@ -191,6 +191,9 @@ st.markdown("""
         border-bottom: 1px solid #e5e7eb;
         background: transparent;
     }
+    .stTabs [data-baseweb="tab-panel"] {
+        padding: 0 !important;
+    }
     .stTabs [data-baseweb="tab"] {
         font-size: 14px;
         font-weight: 500;
