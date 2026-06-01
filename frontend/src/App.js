@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import * as THREE from "three";
 import "./App.css";
 
-const API = "http://localhost:8000";
+const API = "https://lupus-detector.onrender.com";
 
 function hashPw(pw) {
   let hash = 0;
