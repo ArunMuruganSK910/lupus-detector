@@ -364,6 +364,22 @@ export default function App() {
   const [result, setResult] = useState(null);
   const [preview, setPreview] = useState(null);
   const [filename, setFilename] = useState(null);
+  const [backendReady, setBackendReady] = useState(false);
+  const [backendLoading, setBackendLoading] = useState(true);
+
+  useEffect(() => {
+    const ping = async () => {
+      try {
+        await fetch(`${API}/`);
+        setBackendReady(true);
+      } catch (e) {
+        setTimeout(ping, 5000);
+      } finally {
+        setBackendLoading(false);
+      }
+    };
+    ping();
+  }, []);
 
   const handleResult = (data, prev, name) => {
     setResult(data);
@@ -373,6 +389,15 @@ export default function App() {
 
   const reset = () => { setResult(null); setPreview(null); setFilename(null); };
   const signout = () => { setUser(null); reset(); };
+
+  if (backendLoading || !backendReady) return (
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100vh", background: "#0a0a0a", gap: 16 }}>
+      <div style={{ width: 36, height: 36, border: "2px solid #333", borderTop: "2px solid #ef4444", borderRadius: "50%", animation: "spin 1s linear infinite" }} />
+      <div style={{ color: "rgba(255,255,255,0.5)", fontSize: 13, letterSpacing: 2 }}>WAKING UP AI MODEL...</div>
+      <div style={{ color: "rgba(255,255,255,0.2)", fontSize: 11 }}>Free tier — may take up to 60 seconds</div>
+      <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+    </div>
+  );
 
   if (!user) return <AuthPage onLogin={setUser} />;
   if (result) return <ResultPage result={result} preview={preview} filename={filename} onReset={reset} />;
